@@ -1,16 +1,53 @@
-## Hi there 👋
+# 👋 Hi, I'm Evan! 
 
-<!--
-**evandiewald/evandiewald** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+```python
+# Initialize main profile configurations
+import pytorch as torch
+import pandas as pd
+from pyspark.sql import SparkSession
 
-Here are some ideas to get you started:
+class Engineer:
+    def __init__(self):
+        self.name = "Evan Diewald"
+        self.role = "Data & ML Engineer"
+        self.location = "Cleveland, OH"
+        self.company = "Amazon Web Services (AWS)"
+        
+    def get_socials(self) -> pd.DataFrame:
+        return pd.DataFrame({
+            "platform": ["LinkedIn", "Medium", "Google Scholar"],
+            "url": [
+                "linkedin.com/in/evan-diewald-68786413b/",
+                "evandiewald.medium.com/",
+                "scholar.google.com/citations?hl=en&user=PqHDYuYAAAAJ&view_op=list_works",
+            ]
+        })
 
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+    def get_tech_stack(self) -> torch.Tensor:
+        return torch.stack([
+            "PyTorch", "TensorFlow", "huggingface",   # ML & Deep Learning
+            "Python", "SQL", "TypeScript",            # Languages
+            "Spark", "Airflow", "dbt",                # Data Engineering
+            "Terraform", "Docker", "AWS CDK",         # Infrastructure
+        ])
+        
+# Initialize Spark session for education history
+spark = SparkSession.builder.appName("education").getOrCreate()
+
+education = spark.createDataFrame([
+    ("Carnegie Mellon University", "Master's in Mechanical Engineering", "2019-2021"),
+    ("Penn State University", "Bachelor's in Mechanical Engineering", "2016-2019")
+], ["institution", "degree", "years"])
+
+# Function to get current focus areas
+def current_focus() -> list:
+    return [
+        "Large Language Models 🤖",
+        "MLOps & Model Deployment 🚀",
+        "Infrastructure as Code ⚡",
+        "Data Pipeline Optimization 📊"
+    ]
+
+if you.are_interested_in(["GenAI", "Data Engineering", "AWS"]):
+    feel_free_to.connect()
+```
